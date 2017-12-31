@@ -12,6 +12,3 @@ class japan_holiday:
 
 
 
-
-db_conn = japan_holiday()
-db_conn.search_holiday()
