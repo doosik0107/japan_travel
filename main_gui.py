@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+from holiday_gui import *
 from PyQt5.QtWidgets import *
 import sys
 import wx
+
 
 class Main_Gui(QMainWindow):
     def __init__(self):
@@ -26,10 +28,19 @@ class Main_Gui(QMainWindow):
         self.Search_inputbox.move(60,20)
         self.Search_inputbox.resize(150,30)
 
-        self.Search_button = QPushButton("검색",self)
-        self.Search_button.move(220,20)
-        self.Search_button.resize(60,30)
+        Search_button = QPushButton("검색",self)
+        Search_button.move(220,20)
+        Search_button.resize(60,30)
+
+        Search_button.clicked.connect(self.Search_clicked)
         self.show()
+
+    def Search_clicked(self):
+        app = QApplication(sys.argv)
+        holiday_app = Holiday_Gui()
+        sys.exit(app.exec_())
+
+
 
 
 
